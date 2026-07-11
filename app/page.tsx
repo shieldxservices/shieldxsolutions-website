@@ -3,7 +3,7 @@ import Footer from "@/components/layout/Footer";
 
 import Hero from "@/components/sections/Hero";
 import TrustedBy from "@/components/sections/TrustedBy";
-import Services from "@/components/sections/Services";
+import Services from "@/components/sections/ServicesSection";
 import FeaturedProjects from "@/components/sections/FeaturedProjects";
 import Industries from "@/components/sections/Industries";
 import WhyShieldX from "@/components/sections/WhyShieldX";
