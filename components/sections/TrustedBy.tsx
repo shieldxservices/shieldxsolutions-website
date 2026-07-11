@@ -1,4 +1,4 @@
-import Section from "../ui/Section";
+import Section from "@/components/ui/Section";
 
 const industries = [
   "Commercial Offices",

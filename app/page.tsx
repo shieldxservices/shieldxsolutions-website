@@ -1,4 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+
 import Hero from "@/components/sections/Hero";
 import TrustedBy from "@/components/sections/TrustedBy";
 import Services from "@/components/sections/Services";
@@ -8,18 +10,18 @@ import WhyShieldX from "@/components/sections/WhyShieldX";
 import Technology from "@/components/sections/Technology";
 import Coverage from "@/components/sections/Coverage";
 import CTA from "@/components/sections/CTA";
-import Footer from "@/components/layout/Footer";
-
-
-
-
 
 export default function Home() {
   return (
-    <main className="bg-[#09090B] text-white min-h-screen overflow-x-hidden">
+    <main>
       <Navbar />
       <Hero />
-      <Sections />
+      <TrustedBy />
+      <Services />
+      <FeaturedProjects />
+      <Industries />
+      <WhyShieldX />
+      <Technology />
       <Coverage />
       <CTA />
       <Footer />
