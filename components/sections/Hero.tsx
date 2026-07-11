@@ -18,10 +18,36 @@ export default function Hero() {
               Enterprise Networks • Security • Smart Buildings
             </div>
 
-            <h1 className="mt-8 text-5xl font-bold leading-tight md:text-7xl">
-              Technology Infrastructure Built For Businesses That Cannot Afford
-              Downtime
-            </h1>
+            <h1 className="mt-10">
+  <span
+    className="
+      block
+      text-5xl
+      md:text-7xl
+      xl:text-8xl
+      font-black
+      tracking-tight
+      leading-none
+      text-white
+    "
+  >
+    Enterprise Technology
+  </span>
+
+  <span
+    className="
+      mt-3
+      block
+      text-2xl
+      md:text-4xl
+      font-medium
+      tracking-[0.08em]
+      text-blue-300
+    "
+  >
+    Built For Every Business
+  </span>
+</h1>
 
             <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-400">
               Shield X Solutions designs, installs, and supports enterprise

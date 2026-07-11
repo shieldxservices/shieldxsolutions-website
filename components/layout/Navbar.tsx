@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
-import Container from "../ui/Container";
-import Button from "../ui/Button";
+
+import Button from "@/components/ui/Button";
+import Container from "@/components/ui/Container";
 
 const links = [
   { name: "Services", href: "#services" },
@@ -14,19 +16,25 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/40 backdrop-blur-xl">
       <Container className="flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-blue-500/30 bg-blue-600/10">
-            <span className="text-lg font-bold text-blue-400">X</span>
-          </div>
+  <Image
+  src="/projects/Logo.png"
+  alt="Shield X Solutions"
+  width={56}
+  height={56}
+  priority
+  className="h-12 w-12 object-contain"
+/>
 
-          <div>
-            <p className="text-lg font-semibold tracking-wide">
-              Shield X Solutions
-            </p>
-            <p className="text-xs uppercase tracking-[0.3em] text-zinc-400">
-              Engineering Connected Environments
-            </p>
-          </div>
-        </Link>
+  <div className="hidden sm:block">
+    <p className="text-lg font-semibold tracking-wide text-white">
+      Shield X Solutions
+    </p>
+
+    <p className="text-[10px] uppercase tracking-[0.28em] text-zinc-500">
+      Engineering Connected Environments
+    </p>
+  </div>
+</Link>
 
         <nav className="hidden items-center gap-10 lg:flex">
           {links.map((link) => (
