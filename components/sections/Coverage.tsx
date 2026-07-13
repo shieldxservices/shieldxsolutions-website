@@ -7,6 +7,8 @@ import {
   Geography,
   Marker,
   ZoomableGroup,
+  createCoordinates,
+  type Coordinates,
 } from "@vnedyalk0v/react19-simple-maps";
 
 import Container from "@/components/ui/Container";
@@ -31,35 +33,27 @@ const coverageStateIds = new Set([
 const stateLabels = [
   {
     name: "PA",
-    fullName: "Pennsylvania",
-    coordinates: [-77.7, 40.9] as [number, number],
+    coordinates: createCoordinates(-77.7, 40.9),
   },
   {
     name: "NY",
-    fullName: "New York",
-    coordinates: [-75.3, 43.0] as [number, number],
+    coordinates: createCoordinates(-75.3, 43.0),
   },
   {
     name: "NJ",
-    fullName: "New Jersey",
-    coordinates: [-74.6, 40.2] as [number, number],
+    coordinates: createCoordinates(-74.6, 40.2),
   },
   {
     name: "CT",
-    fullName: "Connecticut",
-    coordinates: [-72.7, 41.6] as [number, number],
+    coordinates: createCoordinates(-72.7, 41.6),
   },
 ];
-type MapPosition = {
-  coordinates: [number, number];
-  zoom: number;
-};
 
 export default function Coverage() {
-  const defaultPosition: MapPosition = {
-    coordinates: [-74.8, 41.2],
-    zoom: 4.8,
-  };
+ const defaultPosition: MapPosition = {
+  coordinates: createCoordinates(-74.8, 41.2),
+  zoom: 4.8,
+};
 
   const [position, setPosition] = useState<MapPosition>(defaultPosition);
 
