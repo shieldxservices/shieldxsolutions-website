@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #09090b;
+  --background: #111318;
   --foreground: #ffffff;
   --primary: #2563eb;
+  --surface: #161922;
+  --border: rgba(255, 255, 255, 0.08);
 }
 
 html {
@@ -11,48 +13,64 @@ html {
 }
 
 body {
-  background: #09090b;
-  color: white;
+  min-height: 100vh;
   overflow-x: hidden;
+  background: #14171d;
+  color: white;
 }
 
 body::before {
   content: "";
-
   position: fixed;
-
-  top: -250px;
-
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  width: 900px;
-
-  height: 900px;
-
-  border-radius: 50%;
-
-  background: radial-gradient(
-    circle,
-    rgba(37, 99, 235, 0.18) 0%,
-    rgba(37, 99, 235, 0.08) 30%,
-    transparent 70%
-  );
-
+  inset: 0;
+  z-index: -2;
   pointer-events: none;
 
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.022) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.022) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+  opacity: 0.55;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
   z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(37, 99, 235, 0.06),
+      transparent 26rem
+    ),
+    radial-gradient(
+      circle at 85% 65%,
+      rgba(59, 130, 246, 0.05),
+      transparent 30rem
+    );
 }
 
 section {
   position: relative;
 }
 
-a {
-  transition: all 0.3s ease;
-}
-
+a,
 button {
-  transition: all 0.3s ease;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }

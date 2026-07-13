@@ -23,12 +23,12 @@ export default function CTA() {
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button href="mailto:support@shieldxservices.com">
+            <Button href="mailto:admin@shieldxservices.com">
               Request Consultation
             </Button>
 
             <a
-              href="tel:+18622710789"
+              href="tel:+1 201 702 2606"
               className="inline-flex items-center justify-center rounded-xl border border-white/10 px-6 py-3 font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:border-blue-500/50 hover:bg-white/5"
             >
               Call Shield X

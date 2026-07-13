@@ -19,10 +19,10 @@ export default function Navbar() {
   <Image
   src="/projects/Logo.png"
   alt="Shield X Solutions"
-  width={56}
-  height={56}
+  width={220}
+  height={220}
   priority
-  className="h-12 w-12 object-contain"
+  className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
 />
 
   <div className="hidden sm:block">

@@ -13,34 +13,33 @@ const statImages = [
 
 export default function Hero() {
   return (
-    <section className="relative isolate overflow-hidden pb-28 pt-36">
-      {/* Manhattan background */}
-      <div className="absolute inset-0 -z-30">
-        <Image
-          src="/projects/manhattan-security.png"
-          alt=""
-          fill
-          priority
-          className="object-cover object-[90%_center] opacity-100"
-          sizes="100vw"
-        />
-      </div>
+<section className="relative min-h-[900px] overflow-hidden pb-28 pt-36">      {/* Background image */}
+<div className="absolute inset-0 z-0">
+  <Image
+    src="/projects/background.png"
+    alt=""
+    fill
+    priority
+    className="object-cover object-[32%_center]"
+    sizes="100vw"
+  />
+</div>
 
-      {/* Background overlays */}
-      <div className="absolute inset-0 -z-20 bg-gradient-to-r from-[#09090b] via-[#09090b]/85 to-[#09090b]/45" />
-      <div className="absolute inset-0 -z-20 bg-gradient-to-b from-black/25 via-transparent to-[#09090b]" />
-      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_65%_35%,rgba(37,99,235,0.18),transparent_38%)]" />
+{/* Readability overlays */}
+<div className="absolute inset-0 z-10 bg-gradient-to-r from-[#14171d]/90 via-[#14171d]/55 to-[#14171d]/10" />
 
-      <Container>
-        {/* Main hero content */}
-        <div className="grid items-center gap-14 lg:grid-cols-[0.82fr_1.18fr] xl:gap-20">
+<div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-[#14171d]" />
+      
+
+      <Container className="relative z-20">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.65fr_1.35fr] xl:gap-16">
           <div className="relative z-10">
             <div className="inline-flex items-center rounded-full border border-blue-500/25 bg-blue-500/10 px-5 py-2 text-sm text-blue-300 backdrop-blur-md">
               Enterprise Networks • Security • Smart Buildings
             </div>
 
             <h1 className="mt-10">
-              <span className="block text-5xl font-black leading-[0.95] tracking-[-0.045em] text-white md:text-7xl xl:text-[5.5rem]">
+              <span className="block text-5xl font-black leading-[0.95] tracking-[-0.045em] text-white md:text-7xl xl:text-[4.9rem]">
                 Enterprise
                 <br />
                 Technology
@@ -69,46 +68,37 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Services infographic */}
           <div className="relative z-10 w-full">
-            <div className="absolute -inset-5 rounded-[2rem] bg-blue-600/15 blur-3xl" />
-
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-black/55 p-3 shadow-2xl backdrop-blur-md">
-              <Image
-                src="/projects/hero1.png"
-                alt="Shield X technology services"
-                width={1600}
-                height={1100}
-                priority
-                className="h-auto w-full object-contain"
-              />
-            </div>
-          </div>
+  <div className="relative aspect-[3/2] w-full overflow-hidden rounded-3xl border border-white/10 bg-black/50 shadow-[0_35px_90px_rgba(0,0,0,0.65)] backdrop-blur-xl">
+    <Image
+      src="/projects/hero1.png"
+      alt="Shield X technology services"
+      fill
+      priority
+      className="object-contain"
+      sizes="(max-width: 1024px) 100vw, 65vw"
+    />
+  </div>
+</div>
         </div>
 
-        {/* Stats */}
         <div className="mt-20 grid w-full gap-5 sm:grid-cols-2 xl:grid-cols-4">
-          {STATS.map((item, index) => (
-            <article
-              key={item.label}
-              className="group relative min-h-[270px] w-full overflow-hidden rounded-2xl border border-white/10 bg-black/50 shadow-2xl"
-            >
-              <Image
-                src={statImages[index]}
-                alt=""
-                fill
-                className="object-cover transition duration-700 group-hover:scale-105"
-                sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 25vw"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/10" />
-              <div className="absolute inset-0 bg-blue-950/10 transition duration-500 group-hover:bg-transparent" />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent transition duration-500 group-hover:from-black/10" />
-            </article>
-          ))}
-        </div>
+  {STATS.map((item, index) => (
+    <article
+      key={item.label}
+      className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/10 bg-[#05070b] shadow-2xl"
+    >
+      <Image
+        src={statImages[index]}
+        alt={item.label}
+        fill
+        className="object-contain transition duration-700 group-hover:scale-[1.03]"
+        sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 25vw"
+      />
+    </article>
+  ))}
+</div>
       </Container>
     </section>
   );
-}
+} 
