@@ -33,27 +33,36 @@ const coverageStateIds = new Set([
 const stateLabels = [
   {
     name: "PA",
+    fullName: "Pennsylvania",
     coordinates: createCoordinates(-77.7, 40.9),
   },
   {
     name: "NY",
+    fullName: "New York",
     coordinates: createCoordinates(-75.3, 43.0),
   },
   {
     name: "NJ",
+    fullName: "New Jersey",
     coordinates: createCoordinates(-74.6, 40.2),
   },
   {
     name: "CT",
+    fullName: "Connecticut",
     coordinates: createCoordinates(-72.7, 41.6),
   },
 ];
+type MapPosition = {
+  coordinates: Coordinates;
+  zoom: number;
+};
 
-export default function Coverage() {
- const defaultPosition: MapPosition = {
+const defaultPosition: MapPosition = {
   coordinates: createCoordinates(-74.8, 41.2),
   zoom: 4.8,
 };
+
+export default function Coverage() {
 
   const [position, setPosition] = useState<MapPosition>(defaultPosition);
 
@@ -246,28 +255,31 @@ export default function Coverage() {
                   }
                 </Geographies>
                 {stateLabels.map((state) => (
-  <Marker key={state.name} coordinates={state.coordinates}>
-    <g className="pointer-events-none">
-      <circle
-        r={13}
-        fill="rgba(3, 7, 18, 0.82)"
-        stroke="#93c5fd"
-        strokeWidth={0.8}
-      />
+                  <Marker
+                    key={state.name}
+                    coordinates={state.coordinates}
+                  >
+                    <g className="pointer-events-none">
+                      <circle
+                        r={13}
+                        fill="rgba(3, 7, 18, 0.82)"
+                        stroke="#93c5fd"
+                        strokeWidth={0.8}
+                      />
 
-      <text
-        textAnchor="middle"
-        dominantBaseline="central"
-        fill="#ffffff"
-        fontSize={7}
-        fontWeight={700}
-        letterSpacing={0.5}
-      >
-        {state.name}
-      </text>
-    </g>
-  </Marker>
-))}
+                      <text
+                        textAnchor="middle"
+                        dominantBaseline="central"
+                        fill="#ffffff"
+                        fontSize={7}
+                        fontWeight={700}
+                        letterSpacing={0.5}
+                      >
+                        {state.name}
+                      </text>
+                    </g>
+                  </Marker>
+                ))}
               </ZoomableGroup>
             </ComposableMap>
 
