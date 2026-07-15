@@ -1,8 +1,8 @@
 export const COMPANY = {
   name: "Shield X Solutions",
   tagline: "Engineering Connected Environments.",
-  phone: "(862) 271-0789",
-  email: "support@shieldxservices.com",
+  phone: "201 702 2606",
+  email: "admin@shieldxservices.com",
 };
 
 export const STATS = [

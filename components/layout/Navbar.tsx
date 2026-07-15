@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
+import { FaInstagram } from "react-icons/fa";
 
 const links = [
   { name: "Services", href: "#services" },
@@ -48,9 +49,26 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
-          <Button href="#contact">Request Consultation</Button>
-        </div>
+        <div className="flex items-center gap-3">
+
+  <a
+  href="https://www.instagram.com/shieldxservices"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Instagram"
+  className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 transition-all duration-300 hover:border-white/30 hover:bg-white/10"
+>
+  <FaInstagram
+    className="h-6 w-6 transition-all duration-300 ease-out group-hover:scale-125 group-hover:rotate-3 group-hover:brightness-125 group-hover:drop-shadow-[0_0_12px_rgba(255,120,50,0.8)]"
+    color="#E4405F"
+  />
+</a>
+
+  <Button href="#contact">
+    Request Consultation
+  </Button>
+
+</div>
       </Container>
     </header>
   );
